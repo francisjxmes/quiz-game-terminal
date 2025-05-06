@@ -1,32 +1,75 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Pop Quiz Game
 
-Welcome,
+Pop Quiz Game is a Python terminal game that tests your knowledge with a series of fun and challenging trivia questions. It runs in the Code Institute mock terminal on Heroku.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+The objective is simple: answer as many questions correctly as you can! The game keeps score and gives feedback after each answer, making it both educational and enteratining.
 
-## Reminders
+(live link)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## How to Play
 
-## Creating the Heroku app
+* The game presents a series of general knowledge questions, one at a time.
+* Players type their answers into the terminal.
+* Answers are case-insensitive, and the game continues until all questions are answered.
+* Players receive feedback after each response: "Correct!" or "Wrong!", along with the correct answer.
+* After the final question, the total score is displayed.
+* The game asks whether you'd like to play again, allowing for endless fun and learning.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Features
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Question and Answer Game Loop
+* A list of predefined trivia questions from topics like geography, pop culture, and politics.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Case-Insensitive Validation
+* User answers are converted to lowercase before comparison, making the game more forgiving and user-friendly.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Score Tracking
+* The game keeps track of correct answers and shows the final score at the end of each round.
 
-Connect your GitHub repository and deploy as normal.
+### Replay Option
+* After each quiz round, the player can choose to play again or exit the game.
 
-## Constraints
+### Input Validation
+* Prevents empty inputs by asking the player to enter a valid response.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Data Model
 
----
+The quiz is built using a simple data model:
+* Question List: A list of dictionaries containing question and answer pairs.
+* The quiz uses basic string comparison for answer checking after stripping and converting input to lowercase.
 
-Happy coding!
+## Testing
+
+The game has been manually tested to ensure:
+* All questions display and accept input correctly.
+Score calculation is accurate.
+* Replay loop works as intended.
+* Empty inputs are rejected and re-prompted.
+* The game runs successfully on local terminals and the Code Institute Heroku terminal.
+
+## Bugs
+
+Solved Bugs
+* Replay logic improvement: Added lowercasing and whitespace stripping to handle various user inputs like " Yes " or "Y".
+
+Remaining Bugs
+* No known bugs at the time of writing
+
+## Validator Testing
+* Code passed through a Python linter (PEP8) with no major issues.
+* Input handling has been manually tested with edge cases like whitespace and different casings.
+
+## Deployment 
+
+This game can be deployed using Code Institute’s mock terminal for Heroku or run locally.
+
+To Deploy:
+1. Fork or clone this repository
+2. Create a new Heroku app
+3. Set the buildbacks to Python and NodeJS in that order
+4. Link the Heroku app to the repository
+5. Click on Deploy
+
+## Credits 
+* Code Institute for the deployment terminal
+

@@ -78,7 +78,7 @@ def main():
         ).strip().lower()
         if play_again not in ["yes", "y"]:
             print("Thanks for playing! Goodbye.")
-            break    
+            break
 
 # Start the game by calling the main menu
 
