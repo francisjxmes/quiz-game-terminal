@@ -39,3 +39,28 @@ quiz_questions = [
         "answer": "united nations"
     }
 ]
+
+# Function to run the quiz
+
+
+def run_quiz():
+    score = 0  # Start the score at 0
+
+    for q in quiz_questions:
+        # Validation loop: Keeps asking until user provides a non-empty answer
+        while True:
+            user_answer = input(q["question"] + " ").strip().lower()
+            if user_answer:  # if not empty
+                break
+            else:
+                print("Please enter an answer!")
+
+        # Check answer correctness
+        if user_answer == q["answer"]:
+            print("Correct!\n")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer is: {q['answer'].title()}\n")
+
+    # Final score
+    print(f"You got {score} out of {len(quiz_questions)} correct.\n")
