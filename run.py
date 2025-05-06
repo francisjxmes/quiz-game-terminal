@@ -64,3 +64,18 @@ def run_quiz():
 
     # Final score
     print(f"You got {score} out of {len(quiz_questions)} correct.\n")
+
+# Main function: adds replay loop
+
+
+def main():
+    print("Welcome to the Quiz Game!")
+    while True:
+        run_quiz()
+        # Ask if user wants to play again
+        play_again = input(
+            "Do you want to play again? (yes/no): "
+        ).strip().lower()
+        if play_again not in ["yes", "y"]:
+            print("Thanks for playing! Goodbye.")
+            break    
